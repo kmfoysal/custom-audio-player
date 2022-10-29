@@ -41,6 +41,10 @@
           box-shadow: none;
           outline: none;
         }
+
+        option{
+          color: #fff;
+        }
       }
     }
   }
@@ -60,38 +64,35 @@
     }
 
     #track {
-
-        --before-width: 0;
-
+      --track-before-width: 0;
 
       appearance: none;
-      background: #00ffa3;
+      background: rgba(0, 255, 163, 0.1);
       border-radius: 10px;
       position: relative;
       width: 100%;
-      height: 11px;
+      height: 10px;
       outline: none;
-      
 
       //   Progress Track for Safari Browser
 
       &::-webkit-slider-runnable-track {
-        background: #00ffa3;
+        background: rgba(0, 255, 163, 0.1);
         border-radius: 10px;
         position: relative;
         width: 100%;
-        height: 11px;
+        height: 10px;
         outline: none;
       }
 
       //   Progress Track for Firefox Browser
 
       &::-moz-range-track {
-        background: #00ffa3;
+        background: rgba(0, 255, 163, 0.1);
         border-radius: 10px;
         position: relative;
         width: 100%;
-        height: 11px;
+        height: 10px;
         outline: none;
       }
 
@@ -102,11 +103,12 @@
       //   For Safari and Chrome
       &::before {
         content: "";
-        height: 11px;
-        width: var(--before-width);
-        background-color: red;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        height: 10px;
+        width: var(--track-before-width);
+        background-color: rgba(0, 255, 163, 0.5);
+        // border-top-left-radius: 10px;
+        // border-bottom-left-radius: 10px;
+        border-radius: 10px;
         position: absolute;
         top: 0;
         left: 0;
@@ -117,10 +119,11 @@
       //   For Firefox
 
       &::-moz-range-progress {
-        background-color: red;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        height: 11px;
+        background-color: rgba(0, 255, 163, 0.5);
+        // border-top-left-radius: 10px;
+        // border-bottom-left-radius: 10px;
+        border-radius: 10px;
+        height: 10px;
       }
 
       //   Indicator for chrome and safai
@@ -131,7 +134,7 @@
         width: 15px;
         border-radius: 50%;
         border: none;
-        background-color: yellow;
+        background-color: #00ffa3;
         cursor: pointer;
         position: relative;
         margin: -2px 0 0 0;
@@ -146,7 +149,7 @@
         width: 15px;
         border-radius: 50%;
         border: transparent;
-        background-color: yellow;
+        background-color: #00ffa3;
         cursor: pointer;
         position: relative;
         z-index: 3;
@@ -154,19 +157,20 @@
       }
 
       /* Indicator while dragging - chrome and safari */
-      &:active{
+      &:active {
         &::-webkit-slider-thumb {
-        transform: scale(1.2);
-        background: purple;
+          transform: scale(1.2);
+          // background: purple;
+        }
       }
-    }
 
       /* Indicator while dragging - Firefox */
-      &:active{
+      &:active {
         &::-moz-range-thumb {
-        transform: scale(1.2);
-        background: purple;
-      }}
+          transform: scale(1.2);
+          // background: purple;
+        }
+      }
     }
   }
 }
