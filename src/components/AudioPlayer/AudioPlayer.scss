@@ -10,17 +10,22 @@
     align-items: center;
     margin-bottom: 20px;
     .play {
-      .play-pause {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         gap: 12px;
-        background-color: transparent;
-        border: none;
         color: #fff;
         font-weight: 500;
         font-size: 20px;
         line-height: 30px;
+      .play-pause {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      p{
+        margin: 0;
       }
     }
     .speed-rate {

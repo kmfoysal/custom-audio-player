@@ -64,13 +64,16 @@ const AudioPlayer = () => {
             {isPlaying ? (
               <button className="play-pause" onClick={togglePlaying}>
                 <img src={PauseIcon} alt={PauseIcon} />
-                Click pause to stop listening
               </button>
             ) : (
               <button className="play-pause" onClick={togglePlaying}>
                 <img src={PlayIcon} alt={PlayIcon} />
-                Click play to listen to the blog
               </button>
+            )}
+            {isPlaying ? (
+              <p>Click pause to stop listening</p>
+            ) : (
+              <p>Click play to listen to the blog</p>
             )}
           </div>
           <div className="speed-rate">
